@@ -1,0 +1,288 @@
+/* =================================
+   TECHNICAL DOCUMENTATION PAGES STYLES
+   ================================= */
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0B0510;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(85, 182, 246, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #55b6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #7bc7f8;
+}
+
+.navbar-title {
+    font-size: 1.1rem;
+    color: #aaaaaa;
+}
+
+/* Documentation Container Layout */
+.docs-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 140px);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    background-color: #0B0510;
+    border-right: 3px solid #55b6f6;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    padding: 0 1.5rem;
+}
+
+.sidebar-content h3 {
+    font-size: 1.3rem;
+    color: #55b6f6;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.toc-list {
+    list-style: none;
+}
+
+.toc-list li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-list a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.toc-list a:hover {
+    color: #55b6f6;
+    background-color: rgba(85, 182, 246, 0.1);
+    border-left-color: #55b6f6;
+    padding-left: 1.2rem;
+}
+
+/* Main Content Area */
+.docs-content {
+    flex: 1;
+    padding: 3rem 3rem;
+}
+
+/* Document Section */
+.doc-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(85, 182, 246, 0.2);
+}
+
+.doc-section:last-child {
+    border-bottom: none;
+}
+
+.doc-section h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    color: #55b6f6;
+}
+
+.doc-section p {
+    font-size: 1.05rem;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* PDF Download Section */
+.pdf-download {
+    background-color: rgba(85, 182, 246, 0.1);
+    border: 1px solid rgba(85, 182, 246, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #55b6f6;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background-color: #3a9fe0;
+    box-shadow: 0 4px 12px rgba(85, 182, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.download-icon {
+    font-size: 1.2rem;
+}
+
+.file-info {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background-color: #0a0a0a;
+    color: #666666;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(85, 182, 246, 0.1);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .docs-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 3px solid #55b6f6;
+        padding: 1.5rem 0;
+        position: relative;
+    }
+
+    .sidebar-content {
+        padding: 0 1rem;
+    }
+
+    .toc-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .toc-list li {
+        margin-bottom: 0;
+    }
+
+    .toc-list a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .docs-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .doc-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .pdf-download {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .sidebar-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .toc-list a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .docs-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .doc-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .doc-section p {
+        font-size: 0.95rem;
+    }
+
+    .download-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .file-info {
+        font-size: 0.8rem;
+    }
+
+    .pdf-download {
+        padding: 1rem;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-title {
+        font-size: 0.9rem;
+    }
+}
