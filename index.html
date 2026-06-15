@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Planeur - Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Parallax Section -->
+    <section class="parallax-container">
+        <!-- Background layer - Mountain image (moves slower) -->
+        <div class="parallax-layer background" id="background-layer">
+            <img src="image\mountain_image.jpg" alt="Mountain background">
+        </div>
+        
+        <!-- Foreground layer - Glider image (moves faster) -->
+        <div class="parallax-layer foreground" id="foreground-layer">
+            <img src="image\glider_image.png" alt="Glider">
+        </div>
+        
+        <!-- Title overlay -->
+        <div class="parallax-title">
+            <h1>Simulateur de Planeur</h1>
+        </div>
+        
+        <!-- Scroll indicator at bottom -->
+        <div class="parallax-scroll">
+            <p>Scroll down</p>
+            <img src="image\icon\caret-down.svg" alt="Scroll down" class="scroll-arrow">
+        </div>
+        
+        <!-- Made in ESIEA text -->
+        <div class="made-in-esiea">
+            <p>MADE IN ESIEA</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section with Black Background -->
+    <section class="main-content">
+        <!-- Project Description -->
+        <div class="description-section">
+            <h2>Le Projet</h2>
+            <p>
+                Le simulateur de planeur est un projet démarré lors de l’année 2025/2026 dans le cadre d’un PST 
+                – Projet scientifique et technique de 2A.
+                Si quelconque question venait à être posé merci de contacter un membre de l’équipe ou directement le mentor du projet. 
+            </p>
+            <p>
+                L’équipe 2025/2026 : Jérémie OQUIDAM, Rose NEDELEC, Enzo CAFFIER, Cléo SAM-LOCK, Hugo LORMIER
+                Mentor : Loïc ROUSSEL
+            </p>
+        </div>
+
+        <!-- Context and Mission Section -->
+        <div class="info-section">
+            <div class="info-container">
+                <!-- Context Card -->
+                <div class="info-card context-card">
+                    <div class="icon-wrapper info-icon context-icon">
+                        <img src="image\icon\route.svg" alt="Context Icon" class="info-icon-img">
+                    </div>
+                    <h3>Contexte</h3>
+                    <p>Pourquoi un simulateur de planeur ? Il en existe très peu dans le monde et encore moins autant poussé. De plus il est préférable de s’entrainer à faire des figures sur un simulateur le plus réel possible que directement en réel.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="info-card mission-card">
+                    <div class="icon-wrapper info-icon mission-icon">
+                        <img src="image\icon\task.svg" alt="Mission Icon" class="info-icon-img">
+                    </div>
+                    <h3>Mission</h3>
+                    <p>Créer une expérience immersive de vol la plus réaliste possible en planneur en adaptant une base à 6 vérins et un ancien cockpit d’un astircs 77 au simulateur CONDOR3.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Purpose -->
+        <div class="documentation-purpose">
+            <h2>Pourquoi documenter ?</h2>
+            <p>Ce site permet de rassembler toutes les informations nécessaires à la compréhension, possible réparation ou amélioration de chaque élément et du logiciel lié au projet.
+                De plus cette documentation fournie toute information sur les mesures à prendre en cas de présentation et les risques liés à la base vérin.</p>
+        </div>
+
+        <!-- Documentation Categories -->
+        <div class="documentation-section">
+            <h2>La Documentation</h2>
+            <div class="documentation-container">
+                <!-- Software Documentation Card -->
+                <div class="doc-card software-card">
+                    <div class="icon-wrapper software-icon">
+                        <img src="image\icon\terminal.svg" alt="Terminal Icon" class="doc-icon">
+                    </div>
+                    <h3>Logiciel</h3>
+                    <p>Guide sur le fonctionnement du logiciel de simulation + explication de la configuration de chaque logiciel détaillée. Des informations sur où se rensigner sur les paramêtres sont aussi donnés.</p>
+                    <ul class="doc-features">
+                        <li>Démarrer / Arrêt</li>
+                        <li>Réalité virtuelle</li>
+                        <li>Condor 3</li>
+                        <li>FlightPT...</li>
+                    </ul>
+                    <a href="software-docs.html" class="explore-btn software-btn">Explore Software Docs</a>
+                </div>
+
+                <!-- Electronics Documentation Card -->
+                <div class="doc-card electronics-card">
+                    <div class="icon-wrapper electronics-icon">
+                        <img src="image\icon\chip.svg" alt="Chip Icon" class="doc-icon">
+                    </div>
+                    <h3>Technique et électronique</h3>
+                    <p>Documentation détaillée sur les composants techniques et électroniques du simulateur, incluant les schémas mécaniques et les fichiers des impressions 3d.</p>
+                    <ul class="doc-features">
+                        <li>Joystick</li>
+                        <li>Palonnier</li>
+                        <li>Aérofrein</li>
+                        <li>Poignées...</li>
+                    </ul>
+                    <a href="technical-docs.html" class="explore-btn electronics-btn">Explore Technical Docs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EISEA Project. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Parallax Effect -->
+    <script src="script.js"></script>
+</body>
+</html>

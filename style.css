@@ -1,0 +1,629 @@
+/* =================================
+   GENERAL STYLES
+   ================================= */
+
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font and smooth scrolling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =================================
+   PARALLAX SECTION
+   ================================= */
+
+/* Container for the parallax effect */
+.parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+/* Fade overlay at the bottom of parallax section */
+.parallax-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Height of the fade effect */
+    background: linear-gradient(to bottom, transparent 0%, #000000 100%);
+    z-index: 4; /* Above all parallax layers */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Parallax layers - positioned absolutely to overlap */
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Background layer styling (mountain image) */
+.parallax-layer.background {
+    z-index: 1; /* Behind other elements */
+}
+
+.parallax-layer.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover entire area while maintaining aspect ratio */
+    object-position: center;
+}
+
+/* Foreground layer styling (glider image) */
+.parallax-layer.foreground {
+    z-index: 2; /* In front of background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-layer.foreground img {
+    max-width: 80%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* Title at the top of parallax */
+.parallax-title {
+    position: absolute;
+    top: 15%; /* Positioned near the top */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 3; /* In front of all parallax layers */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.parallax-title h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Scroll text at the bottom of parallax */
+.parallax-scroll {
+    position: absolute;
+    bottom: 10%; /* Positioned near the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 3; /* In front of all parallax layers */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease-out; /* Smooth fade transition */
+}
+
+.parallax-scroll p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Scroll arrow animation */
+.scroll-arrow {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Bounce animation keyframes */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Made in ESIEA text at bottom right */
+.made-in-esiea {
+    position: absolute;
+    bottom: 5%; /* Positioned at bottom */
+    right: 3%; /* Positioned at right */
+    text-align: right;
+    color: #000000; /* Black color to blend with fade */
+    z-index: 5; /* Above the fade overlay */
+    text-shadow: none; /* No shadow needed */
+}
+
+.made-in-esiea p {
+    font-size: 1.5rem; /* Bigger font size */
+    font-weight: bold;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+
+/* =================================
+   MAIN CONTENT SECTION
+   ================================= */
+
+/* Black background section */
+.main-content {
+    background-color: #0B0510;
+    color: #ffffff;
+    padding: 4rem 2rem;
+}
+
+/* Description section styling */
+.description-section {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+.description-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.description-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #cccccc;
+}
+
+/* =================================
+   INFO SECTION (Context & Mission)
+   ================================= */
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Info card styling */
+.info-card {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Info icon wrapper */
+.info-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.context-icon {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.mission-icon {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Info icon image */
+.info-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Info card title */
+.info-card h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+/* Info card description */
+.info-card p {
+    font-size: 0.95rem;
+    color: #bbbbbb;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =================================
+   DOCUMENTATION PURPOSE
+   ================================= */
+
+.documentation-purpose {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%);
+    border-radius: 15px;
+    padding: 3rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+.documentation-purpose h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.documentation-purpose p {
+    font-size: 1.05rem;
+    color: #cccccc;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   DOCUMENTATION SECTION
+   ================================= */
+
+/* Section title */
+.documentation-section {
+    margin-bottom: 2rem;
+}
+
+.documentation-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Container for documentation cards */
+.documentation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+/* Documentation card styling */
+.doc-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+}
+
+.doc-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Software card hover - light blue border */
+.software-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Electronics card hover - dark blue border */
+.electronics-card:hover {
+    border-color: #55b6f6;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Icon wrapper with border and rounded corners */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border: 3px solid;
+}
+
+/* Software card icon - light blue */
+.software-icon {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+}
+
+/* Electronics card icon - dark blue */
+.electronics-icon {
+    background-color: rgba(37, 99, 235, 0.1);
+    border-color: #55b6f6;
+}
+
+/* Icon image styling */
+.doc-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Card title */
+.doc-card h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+/* Card description */
+.doc-card p {
+    font-size: 1rem;
+    color: #aaaaaa;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Feature list */
+.doc-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.doc-features li {
+    color: #999999;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+/* Software card chevron */
+.software-card .doc-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 16px;
+    height: 16px;
+    background-image: url('image/icon/chevron-soft.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Electronics card chevron */
+.electronics-card .doc-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 16px;
+    height: 16px;
+    background-image: url('image/icon/chevron-elec.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Explore button */
+.explore-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    text-align: center;
+}
+
+/* Software button - light blue */
+.software-btn {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+}
+
+.software-btn:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Electronics button - dark blue */
+.electronics-btn {
+    background-color: #55b6f6;
+    border-color: #55b6f6;
+    color: #ffffff;
+}
+
+.electronics-btn:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+
+/* =================================
+   FOOTER
+   ================================= */
+
+footer {
+    background-color: #0a0a0a;
+    color: #666666;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    .parallax-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .parallax-scroll p {
+        font-size: 1.2rem;
+    }
+    
+    .scroll-arrow {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .made-in-esiea p {
+        font-size: 1.2rem;
+    }
+    
+    .description-section h2 {
+        font-size: 2rem;
+    }
+    
+    .documentation-section h2 {
+        font-size: 2rem;
+    }
+    
+    .documentation-purpose {
+        padding: 2rem;
+    }
+    
+    .documentation-purpose h2 {
+        font-size: 1.6rem;
+    }
+    
+    .documentation-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .info-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .doc-card {
+        padding: 2rem;
+    }
+    
+    .doc-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .parallax-title h1 {
+        font-size: 2rem;
+    }
+    
+    .parallax-scroll p {
+        font-size: 1rem;
+    }
+    
+    .scroll-arrow {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .made-in-esiea p {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .description-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .description-section p {
+        font-size: 1rem;
+    }
+    
+    .documentation-purpose {
+        padding: 1.5rem;
+        margin: 1.5rem auto 3rem auto;
+    }
+    
+    .documentation-purpose h2 {
+        font-size: 1.3rem;
+    }
+    
+    .documentation-purpose p {
+        font-size: 0.95rem;
+    }
+    
+    .documentation-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .info-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .doc-card {
+        padding: 1.5rem;
+    }
+    
+    .doc-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .doc-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
