@@ -476,6 +476,67 @@ html {
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
 }
 
+/* =================================
+   IMPROVEMENT SECTION
+   ================================= */
+
+.improvement-section {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding-top: 1rem;
+}
+
+.improvement-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.improvement-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(85, 182, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+    border: 1px solid rgba(85, 182, 246, 0.28);
+    border-radius: 15px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(85, 182, 246, 0.08);
+}
+
+.improvement-card p {
+    font-size: 1.05rem;
+    color: #d7d7d7;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.improvement-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.4rem;
+    border-radius: 8px;
+    background-color: #55b6f6;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.improvement-download-btn:hover {
+    background-color: #3a9fe0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 182, 246, 0.35);
+}
+
+.improvement-download-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex: 0 0 auto;
+    display: block;
+}
+
 
 /* =================================
    FOOTER
@@ -519,6 +580,14 @@ footer {
     
     .documentation-section h2 {
         font-size: 2rem;
+    }
+
+    .improvement-section h2 {
+        font-size: 2rem;
+    }
+
+    .improvement-card {
+        padding: 1.5rem;
     }
     
     .documentation-purpose {
@@ -594,6 +663,18 @@ footer {
     
     .documentation-section h2 {
         font-size: 1.5rem;
+    }
+
+    .improvement-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .improvement-card {
+        padding: 1.25rem;
+    }
+
+    .improvement-card p {
+        font-size: 0.95rem;
     }
     
     .info-container {
